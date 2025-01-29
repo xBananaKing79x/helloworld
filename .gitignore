@@ -1,5 +1,7 @@
 /project1
 .idea
 *.iml
+out/
 
 
+/target/
