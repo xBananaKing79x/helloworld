@@ -49,8 +49,8 @@ public class Main {
         var personsCount = timeLimit / personLimit;
         System.out.println("Всего работников в компании - " + personsCount);
         personsCount = personsCount + 94;
-        var new_time_limit = personLimit * personsCount;
-        System.out.println("Если в компании работает " + personsCount + " сотрудника, то всего " + new_time_limit + " часов работы может быть поделено между сотрудниками.");
+        var newTimeLimit = personLimit * personsCount;
+        System.out.println("Если в компании работает " + personsCount + " сотрудника, то всего " + newTimeLimit + " часов работы может быть поделено между сотрудниками.");
 
     }
 }
