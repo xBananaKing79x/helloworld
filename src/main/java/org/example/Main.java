@@ -34,23 +34,23 @@ public class Main {
         System.out.println(frog);
         frog = frog + 4;
         System.out.println(frog);
-        var boxer_1 = 78.2;
-        var boxer_2 = 82.7;
-        var boxers_sum = boxer_1 + boxer_2;
-        System.out.println(boxers_sum);
-        var boxers_diff = Math.abs(boxer_1 - boxer_2);
-        System.out.println(boxers_diff);
-        var boxers_max = Math.max(boxer_1, boxer_2);
-        var boxers_min = Math.min(boxer_1, boxer_2);
-        var boxers_div = boxers_max % boxers_min;
-        System.out.println(boxers_div);
-        var time_limit = 640;
-        var person_limit = 8;
-        var persons_count = time_limit / person_limit;
-        System.out.println("Всего работников в компании - " + persons_count);
-        persons_count = persons_count + 94;
-        var new_time_limit = person_limit * persons_count;
-        System.out.println("Если в компании работает " + persons_count + " сотрудника, то всего " + new_time_limit + " часов работы может быть поделено между сотрудниками.");
+        var boxer1 = 78.2;
+        var boxer2 = 82.7;
+        var boxersSum = boxer1 + boxer2;
+        System.out.println(boxersSum);
+        var boxersDiff = Math.abs(boxer1 - boxer2);
+        System.out.println(boxersDiff);
+        var boxersMax = Math.max(boxer1, boxer2);
+        var boxersMin = Math.min(boxer1, boxer2);
+        var boxersDiv = boxersMax % boxersMin;
+        System.out.println(boxersDiv);
+        var timeLimit = 640;
+        var personLimit = 8;
+        var personsCount = timeLimit / personLimit;
+        System.out.println("Всего работников в компании - " + personsCount);
+        personsCount = personsCount + 94;
+        var new_time_limit = personLimit * personsCount;
+        System.out.println("Если в компании работает " + personsCount + " сотрудника, то всего " + new_time_limit + " часов работы может быть поделено между сотрудниками.");
 
     }
 }
