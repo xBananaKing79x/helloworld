@@ -64,9 +64,9 @@ public class Main {
             System.out.println("В Вагоне нет мест");
         }
 //Седьмая задача
-        int one = 2;
-        int two = 3;
-        int three = 2;
+        int one = 2;//Значение первой переменной
+        int two = 3;//Значение второй переменной
+        int three = 2;//Значение Третьей переменной
         if (one > two && one > three) {
             System.out.println("Первое значение максимальное");
         } else if (one < two && two > three) {
