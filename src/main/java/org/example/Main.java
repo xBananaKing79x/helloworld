@@ -7,18 +7,24 @@ public class Main {
         if (personAge >= 18)//Условие совершеннолетия//
         {
             System.out.println("Человек совершеннолетний");
-        } else System.out.println("Человеку меньше 18, он не достиг совершеннолетия, нужно немного подождать");
+        } else {
+            System.out.println("Человеку меньше 18, он не достиг совершеннолетия, нужно немного подождать");
+        }
 // Вторая задача
         byte outsideWeather = 7; // Указываем температуру на улице
         if (outsideWeather <= 5) {
             System.out.println("На улице - " + outsideWeather + " , нужно надеть шапку.");
-        } else System.out.println("На улице - " + outsideWeather + ". Сегодня тепло, можно идти без шапки.");
+        } else {
+            System.out.println("На улице - " + outsideWeather + ". Сегодня тепло, можно идти без шапки.");
+        }
 // Третья задача
         short actualSpeed = 50;//Указываем текущую скорость
         short speedLimit = 60;//Указываем ограничение скорости
         if (actualSpeed > speedLimit) {
             System.out.println("Скорость превышена");
-        } else System.out.println("Превышения скорости нет");
+        } else {
+            System.out.println("Превышения скорости нет");
+        }
 //Четвертая задача
         byte actualAge = 2;//Указываем текущий возраст
         if (actualAge > 2 && actualAge <= 6)//Возраст хождения в ДС
