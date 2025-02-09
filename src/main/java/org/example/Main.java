@@ -56,7 +56,7 @@ public class Main {
             return; // Завершаем выполнение программы
         }
         String season;
-        switch (monthNumber) {
+        switch (monthNumber){
             case 12:
             case 1:
             case 2:
