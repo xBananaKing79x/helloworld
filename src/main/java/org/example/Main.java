@@ -3,25 +3,31 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
         //Задача 1
-        int clientOS = 1;
-        if (clientOS == 0) {
-            System.out.println("Установите версию для Android по ссылке");
+        char clientOS1 = 1;
+        if (clientOS1 == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
         } else {
-            System.out.println("Установите версию для iOS по cсылке");
+            System.out.println("Установите версию приложения для Android по cсылке");
         }
         //Задача 2
-        int clientOS_2 = 0;
-        int clientDeviceYear = 2015;
-        if (clientDeviceYear < 2015 && clientOS_2 == 0) {
-            System.out.println("Установите облегченную версию для iOS по ссылке");
-        } else if (clientDeviceYear < 2015 && clientOS == 1) {
-            System.out.println("Установите облегченную версию для Android по ссылке");
+        int clientOS = 0; // 0 — iOS, 1 — Android
+        int clientDeviceYear = 2013; // Год выпуска телефона
+        if (clientOS == 0) { // Проверяем, что это iOS
+            if (clientDeviceYear < 2015) { // Если год выпуска ранее 2015
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            } else { // Если год выпуска 2015 или позже
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            }
+        } else if (clientOS == 1) { // Проверяем, что это Android
+            if (clientDeviceYear < 2015) { // Если год выпуска ранее 2015
+                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+            } else { // Если год выпуска 2015 или позже
+                System.out.println("Установите версию приложения для Android по ссылке");
+            }
+        } else {
+            System.out.println("Ошибка: Некорректное значение clientOS. Введите 0 для iOS или 1 для Android.");
         }
-        if (clientDeviceYear >= 2015 && clientOS_2 == 0) {
-            System.out.println("Установите версию для iOS по cсылке");
-        } else if (clientDeviceYear >= 2015 && clientOS_2 == 1) {
-            System.out.println("Установите версию для Android по cсылке");
-        }
+
         //Задача 3
         int year = 2044;
         if (year > 1584) {//Год должен быть больше 1584
@@ -56,7 +62,7 @@ public class Main {
             return; // Завершаем выполнение программы
         }
         String season;
-        switch (monthNumber){
+        switch (monthNumber) {
             case 12:
             case 1:
             case 2:
