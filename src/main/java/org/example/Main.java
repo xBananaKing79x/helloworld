@@ -39,7 +39,7 @@ public class Main {
         //Задача 8
         int monthlySavings = 29000;//Указываем сумму, которую будем откладывать
         int totalSavings = 0; //Указываем начальную сумму
-        for (int month = 1; month < 12; month++) {
+        for (int month = 1; month <= 12; month++) {
             totalSavings += monthlySavings;
             System.out.println("Месяц " + month + " сумма накоплений равна " + totalSavings);
         }
