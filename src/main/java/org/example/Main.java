@@ -21,7 +21,35 @@ public class Main {
             System.out.println("Вывод в консоль чисел от 10 до -10, число " + i);
         }
         //Задача 5
-        for (int i = 1904; i<=2096;i=i+4)
+        for (int i = 1904; i<=2096;i++) {
+            if ((i % 400 == 0) || (i % 4 == 0 && i % 100 != 0)){ //Определяем является ли год високосным
+                System.out.println("Год "+ i + " является високосным.");
+            }
+        }
+        //Задача 6
+        for (int i=7; i<=98; i++) {
+            if (i % 7==0) {
+                System.out.println("Вывод числа " + i);
+            }
+        }
+        //Задача 7
+        int monthlySavings = 29000;//Указываем сумму, которую будем откладывать
+        int totalSavings = 0; //Указываем начальную сумму
+        for (int month = 1; month<12; month++) {
+            totalSavings = totalSavings + monthlySavings;
+            System.out.println("Месяц " + month + " сумма накоплений равна " + totalSavings);
+        }
+        //Задача 8
+        int monthlySavings2 = 29000;//Указываем сумму, которую будем откладывать
+        double totalSavings2 = 0; //Указываем начальную сумму
+        double annualInterestRate = 0.12;//Годовая процентная ставка
+        double monthlyInterestRate = annualInterestRate / 12;//Месячная ставка
+        for (int month = 1; month<=12; month++) {
+            totalSavings2 = totalSavings2 + monthlySavings2;
+            totalSavings2 = totalSavings2 + (totalSavings2 * monthlyInterestRate);
+            System.out.println("Месяц " + month + " сумма накоплений равна " + totalSavings2);
+        }
     }
-
 }
+
+
