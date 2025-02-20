@@ -37,7 +37,7 @@ public class Main {
         System.out.println("Задача 4");
         for (int i = 0; i < arr3.length; i++) {
             if (arr3[i] % 2 != 0) {
-                arr3[i] = arr3[i] + 1;
+                arr3[i] += 1;
             }
             System.out.print(arr3[i]);
         }
