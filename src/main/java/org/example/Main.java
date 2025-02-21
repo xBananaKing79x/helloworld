@@ -39,8 +39,8 @@ public class Main {
             if (arr3[i] % 2 != 0) {
                 arr3[i] += 1;
             }
-            System.out.print(arr3[i]);
         }
+        System.out.print(Arrays.toString(arr3));
     }
 }
 
