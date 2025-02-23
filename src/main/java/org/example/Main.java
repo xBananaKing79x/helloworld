@@ -36,9 +36,9 @@ public class Main {
         }
         System.out.println("Домашнее задание");
         System.out.println("Задача 1:");
-        int[] payments = {90, 100, 80, 100, 110};//Инициализируем массив значений выплат
-        int paymentSum = 0;
-        for (int payment : payments) {//Складываем значения массива
+        double [] payments = {91.51234, 123.4, 80, 111, 110};//Инициализируем массив значений выплат
+        double paymentSum = 0;
+        for (double payment : payments) {//Складываем значения массива
             paymentSum += payment;
         }
         System.out.println("Сумма трат за месяц составила: " + paymentSum + " рублей");
@@ -47,10 +47,10 @@ public class Main {
         int maxValue = -1;
         for (int i = 0; i < payments.length; i++) {
             if (payments[i] > maxValue) {
-                maxValue = payments[i];
+                maxValue = (int) payments[i];
             }
             if (payments[i] < minValue) {
-                minValue = payments[i];
+                minValue = (int) payments[i];
             }
         }
         System.out.println("Минимальная сумма трат за неделю составила " + minValue + " рублей");
