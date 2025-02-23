@@ -60,10 +60,17 @@ public class Main {
         System.out.println("Средняя сумма затрат за месяц составила " + averagePayment + " рублей");
         System.out.println("Задача 4:");
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        String fullName = "";
-        for (int i = reverseFullName.length - 1; i >= 0; i--) {
-            fullName += reverseFullName[i];
+        int left = 0; // Указатель на начало массива
+        int right = reverseFullName.length - 1; // Указатель на конец массива
+        while (left < right) {
+            // Меняем местами символы
+            char temp = reverseFullName[left];
+            reverseFullName[left] = reverseFullName[right];
+            reverseFullName[right] = temp;
+            // Двигаем указатели к центру
+            left++;
+            right--;
         }
-        System.out.println(fullName);
+        System.out.println(reverseFullName);
     }
 }
