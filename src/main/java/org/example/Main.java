@@ -60,8 +60,10 @@ public class Main {
         System.out.println("Средняя сумма затрат за месяц составила " + averagePayment + " рублей");
         System.out.println("Задача 4:");
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        while (int i 0){
-            System.out.println(reverseFullName[i] + reverseFullName[i - 1]);
+        String fullName = "";
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            fullName += reverseFullName[i];
         }
+        System.out.println(fullName);
     }
 }
