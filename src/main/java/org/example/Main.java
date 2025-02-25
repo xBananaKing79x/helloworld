@@ -30,10 +30,10 @@ public class Main {
         System.out.println(s1);
         System.out.println("Домашнее задание:");
         System.out.println("Задача 1:");
-        String fistName = "Ivan";
+        String firstName = "Ivan";
         String middleName = "Ivanovich";
         String lastName = "Ivanov";
-        String fullName = lastName + " " + fistName + " " + middleName;
+        String fullName = lastName + " " + firstName + " " + middleName;
         System.out.println("Ф.И.О. сотрудника - " + fullName);
         System.out.println("Задача 2:");
         String upperName = fullName.toUpperCase();
