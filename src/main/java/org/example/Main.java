@@ -42,6 +42,6 @@ public class Main {
         int year = 1904;
         isLeapYear(year);
         System.out.println("Задача 2:");
-        
+
     }
 }
