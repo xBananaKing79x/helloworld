@@ -1,5 +1,7 @@
 package org.example;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.time.LocalDate;
 
 public class Main {
@@ -10,15 +12,14 @@ public class Main {
     public static void printIssues(int issueCount) {
         System.out.println(issueCount);
     }
-
-    public static int sum(int[] numbers) {
+    @org.jetbrains.annotations.Contract(pure = true)
+    public static int sum(int @NotNull [] numbers) {
         int sum = 0;
         for (int i = 0; i < numbers.length; i++) {
             sum = sum + numbers[i];
         }
         return sum;
     }
-
     public static void isLeapYear(int year) {
         if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) { //Определяем является ли год високосным
             System.out.println(year + "  - високосный год.");
@@ -26,7 +27,6 @@ public class Main {
             System.out.println(year + "  - невисокосный год");
         }
     }
-
     public static void isLightVersion(int clientOS, int clientDeviceYear) {
         int currentYear = LocalDate.now().getYear();
         if (clientOS == 0) { // Проверяем, что это iOS
@@ -68,5 +68,6 @@ public class Main {
         int clientDeviceYear = 2024;
         isLightVersion(clientOS, clientDeviceYear);
         System.out.println("Задача 3:");
+
     }
 }
