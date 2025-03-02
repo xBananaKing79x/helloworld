@@ -67,5 +67,6 @@ public class Main {
         int clientOS = 1;
         int clientDeviceYear = 2024;
         isLightVersion(clientOS, clientDeviceYear);
+        System.out.println("Задача 3:");
     }
 }
