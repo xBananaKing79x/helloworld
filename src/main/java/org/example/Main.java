@@ -10,7 +10,6 @@ public class Main {
             System.out.println(year + "  - невисокосный год");
         }
     }
-
     public static void isLightVersion(int clientOS, int clientDeviceYear) {//Метод, определяющий необходимость установки облегченной версии приложения
         int currentYear = LocalDate.now().getYear();
         if (clientOS == 0) { // Проверяем, что это iOS
@@ -29,8 +28,7 @@ public class Main {
             System.out.println("Ошибка: Некорректное значение clientOS. Введите 0 для iOS или 1 для Android.");
         }
     }
-
-    public static int deliveryDays(int deliveryDistance) {//Метод, определяющий количество дней доставки до клиента
+    public static int getDeliveryDays(int deliveryDistance) {//Метод, определяющий количество дней доставки до клиента
         if (deliveryDistance <= 20) {
             return 1; // Доставка в пределах 20км занимает 1 день
         } else if (deliveryDistance <= 60) {
@@ -39,7 +37,6 @@ public class Main {
             return 3; //Доставка в пределах 60-100км занимает 3 дня
         } else return -1;//Возвращаемое значение, если расстояние до клиента больше 100км
     }
-
     public static void main(String[] args) {
         System.out.println("Домашнее задание:");
         System.out.println("Задача 1:");
@@ -51,11 +48,11 @@ public class Main {
         isLightVersion(clientOS, clientDeviceYear);
         System.out.println("Задача 3:");
         int deliveryDistance = 95;
-        deliveryDays(deliveryDistance);
-        if (deliveryDays(deliveryDistance) == -1) {
+        getDeliveryDays(deliveryDistance);
+        if (getDeliveryDays(deliveryDistance) == -1) {
             System.out.println("Доставки нет");
         } else {
-            System.out.println("Потребуется дней " + deliveryDays(deliveryDistance));
+            System.out.println("Потребуется дней " + getDeliveryDays(deliveryDistance));
         }
     }
 }
