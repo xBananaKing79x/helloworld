@@ -4,16 +4,26 @@ public class Main {
     public static void printSeparator() {
         System.out.println("++++++++++++++++");
     }
+
     public static void printIssues(int issueCount) {
         System.out.println(issueCount);
     }
-    public static int sum (int [] numbers) {
+
+    public static int sum(int[] numbers) {
         int sum = 0;
         for (int i = 0; i < numbers.length; i++) {
             sum = sum + numbers[i];
         }
         return sum;
     }
+    public static void isLeapYear(int year) {
+        if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) { //Определяем является ли год високосным
+            System.out.println(year + "  - високосный год.");
+        } else {
+            System.out.println(year + "  - невисокосный год");
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Упражнение урока:");
         int[] issuesByMonths = {4, 6, 7, 9, 2, 5, 12, 3, 7, 10, 6, 7, 1, 8};
@@ -27,6 +37,11 @@ public class Main {
         printSeparator();
         int total = sum(issuesByMonths);
         printIssues(total);
+        System.out.println("Домашнее задание:");
+        System.out.println("Задача 1:");
+        int year = 1904;
+        isLeapYear(year);
+        System.out.println("Задача 2:");
+        
     }
-    public static void
 }
