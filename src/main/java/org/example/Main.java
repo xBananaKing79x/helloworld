@@ -30,16 +30,16 @@ public class Main {
         }
     }
 
-    public static int deliveryDays (int deliveryDistance) {//Метод, определяющий количество дней доставки до клиента
+    public static int deliveryDays(int deliveryDistance) {//Метод, определяющий количество дней доставки до клиента
         if (deliveryDistance <= 20) {
             return 1; // Доставка в пределах 20км занимает 1 день
         } else if (deliveryDistance <= 60) {
             return 2; //Доставка в пределах 20-60км занимает 2 дня
         } else if (deliveryDistance <= 100) {
             return 3; //Доставка в пределах 60-100км занимает 3 дня
-        }
-        else return -1;//Возвращаемое значение, если расстояние до клиента больше 100км
+        } else return -1;//Возвращаемое значение, если расстояние до клиента больше 100км
     }
+
     public static void main(String[] args) {
         System.out.println("Домашнее задание:");
         System.out.println("Задача 1:");
