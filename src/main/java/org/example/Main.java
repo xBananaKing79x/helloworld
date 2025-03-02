@@ -1,33 +1,17 @@
 package org.example;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.time.LocalDate;
 
 public class Main {
-    public static void printSeparator() {
-        System.out.println("++++++++++++++++");
-    }
-
-    public static void printIssues(int issueCount) {
-        System.out.println(issueCount);
-    }
-    @org.jetbrains.annotations.Contract(pure = true)
-    public static int sum(int @NotNull [] numbers) {
-        int sum = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            sum = sum + numbers[i];
-        }
-        return sum;
-    }
-    public static void isLeapYear(int year) {
+    public static void isLeapYear(int year) {//Метод, который определяет является ли указанный год високосным
         if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) { //Определяем является ли год високосным
             System.out.println(year + "  - високосный год.");
         } else {
             System.out.println(year + "  - невисокосный год");
         }
     }
-    public static void isLightVersion(int clientOS, int clientDeviceYear) {
+
+    public static void isLightVersion(int clientOS, int clientDeviceYear) {//Метод, определяющий необходимость установки облегченной версии приложения
         int currentYear = LocalDate.now().getYear();
         if (clientOS == 0) { // Проверяем, что это iOS
             if (clientDeviceYear < currentYear) { // Если год выпуска ранее текущего
@@ -46,19 +30,17 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println("Упражнение урока:");
-        int[] issuesByMonths = {4, 6, 7, 9, 2, 5, 12, 3, 7, 10, 6, 7, 1, 8};
-        printSeparator();
-        for (int i = 0; i < issuesByMonths.length; i++) {
-            printIssues(issuesByMonths[i]);
-            if ((i + 1) % 3 == 0) {
-                printSeparator();
-            }
+    public static int deliveryDays (int deliveryDistance) {//Метод, определяющий количество дней доставки до клиента
+        if (deliveryDistance <= 20) {
+            return 1; // Доставка в пределах 20км занимает 1 день
+        } else if (deliveryDistance <= 60) {
+            return 2; //Доставка в пределах 20-60км занимает 2 дня
+        } else if (deliveryDistance <= 100) {
+            return 3; //Доставка в пределах 60-100км занимает 3 дня
         }
-        printSeparator();
-        int total = sum(issuesByMonths);
-        printIssues(total);
+        else return -1;//Возвращаемое значение, если расстояние до клиента больше 100км
+    }
+    public static void main(String[] args) {
         System.out.println("Домашнее задание:");
         System.out.println("Задача 1:");
         int year = 1904;
@@ -68,6 +50,12 @@ public class Main {
         int clientDeviceYear = 2024;
         isLightVersion(clientOS, clientDeviceYear);
         System.out.println("Задача 3:");
-
+        int deliveryDistance = 95;
+        deliveryDays(deliveryDistance);
+        if (deliveryDays(deliveryDistance) == -1) {
+            System.out.println("Доставки нет");
+        } else {
+            System.out.println("Потребуется дней " + deliveryDays(deliveryDistance));
+        }
     }
 }
