@@ -9,11 +9,10 @@ public class Main {
             System.out.println("Имя - "+ names[i] + " Возраст - " + ages[i]);
         }
         Person sarah = new Person("Sarah", 30);
-        System.out.println("sarah.name = " + sarah.name);
-        System.out.println("sarah.Age = " + sarah.Age);
+        System.out.println("sarah.name = " + sarah.getName());
+        System.out.println("sarah.Age = " + sarah.getAge());
         Person john = new Person("John", 13);
-        System.out.println("john.name = " + john.name);
-        System.out.println("john.Age = " + john.Age);
+        System.out.println("john.name = " + john.getName());
+        System.out.println("john.Age = " + john.getAge());
     }
-
 }
