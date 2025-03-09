@@ -3,3 +3,5 @@
 *.iml
 
 
+/target/classes/org/example/Person.class
+/target/classes/org/example/PersonService.class
