@@ -8,7 +8,7 @@ public class Book {
 
     // Переопределяем метод toString
     public String toString() {
-        return "Автор - " + author + " Наименование произведения - " + title + " Год публикации - " + publicationYear;
+        return "Автор - " + author.toString() + " Наименование произведения - " + title + " Год публикации - " + publicationYear;
     }
 
     // Переопределяем метод equals
