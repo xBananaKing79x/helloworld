@@ -18,7 +18,7 @@ public class Employee {
         this.salary = salary;
     }
     //Геттеры
-    public int getID() {
+    public int getId() {
         return id;
     }
     public String getFullName() {
