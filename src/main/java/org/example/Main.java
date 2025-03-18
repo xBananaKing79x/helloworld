@@ -180,6 +180,7 @@ public class Main {
         System.out.println("Фонд оплаты труда: " + calculateTotalSalary());
         //Поиск сотрудника с минимальным окладом
         System.out.println("Сотрудник с минимальным окладом: " + findMinSalaryEmployee());
+        
 
 
     }
