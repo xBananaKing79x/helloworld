@@ -4,6 +4,7 @@ import org.w3c.dom.ls.LSOutput;
 
 public class Main {
     private static Employee[] employees = new Employee[10];
+
     //Базовые методы
     //Печать количества сотрудников
     public static void printAllEmployees() {
@@ -20,6 +21,7 @@ public class Main {
         }
         return total;
     }
+
     //Поиск сотрудника с минимальным окладом
     public static Employee findMinSalaryEmployee() {
         Employee minEmp = null;
@@ -32,6 +34,7 @@ public class Main {
         }
         return minEmp;
     }
+
     //Поиск сотрудника с максимальным окладом
     public static Employee findMaxSalaryEmployee() {
         Employee maxEmp = null;
@@ -44,6 +47,7 @@ public class Main {
         }
         return maxEmp;
     }
+
     //Расчет средней зарплаты по компании
     public static double calculateAverageSalary() {
         int count = 0;
@@ -56,6 +60,7 @@ public class Main {
         }
         return count > 0 ? total / count : 0;
     }
+
     //Вывод полного имени
     public static void printFullNames() {
         for (Employee emp : employees) {
@@ -72,6 +77,7 @@ public class Main {
             }
         }
     }
+
     //Поиск минимального оклада по департаменту
     public static Employee findDepartmentMinSalary(int department) {
         Employee minEmp = null;
@@ -84,6 +90,7 @@ public class Main {
         }
         return minEmp;
     }
+
     //Поиск максимального оклада по департаменту
     public static Employee findDepartmentMaxSalary(int department) {
         Employee maxEmp = null;
@@ -96,6 +103,7 @@ public class Main {
         }
         return maxEmp;
     }
+
     //Расчет фонда ЗП по департаменту
     public static double calculateDepartmentSalarySum(int department) {
         double sum = 0;
@@ -106,6 +114,7 @@ public class Main {
         }
         return sum;
     }
+
     //Расчет средней ЗП по департаменту
     public static double calculateDepartmentAverageSalary(int department) {
         int count = 0;
@@ -118,6 +127,7 @@ public class Main {
         }
         return count > 0 ? sum / count : 0;
     }
+
     //Индексация ЗП по департаменту
     public static void indexDepartmentSalaries(int department, double percent) {
         for (Employee emp : employees) {
@@ -126,6 +136,7 @@ public class Main {
             }
         }
     }
+
     //Вывести сотрудников департамента
     public static void printDepartmentEmployees(int department) {
         for (Employee emp : employees) {
@@ -135,6 +146,7 @@ public class Main {
             }
         }
     }
+
     //Вывод сотрудника с ЗП меньше указанной
     public static void printEmployeesWithSalaryLessThan(double threshold) {
         for (Employee emp : employees) {
@@ -144,6 +156,7 @@ public class Main {
             }
         }
     }
+
     //Вывод сотрудника с ЗП больше указанной
     public static void printEmployeesWithSalaryGreaterOrEqual(double threshold) {
         for (Employee emp : employees) {
@@ -153,6 +166,7 @@ public class Main {
             }
         }
     }
+
     public static void main(String[] args) {
         employees[0] = new Employee("Иван Петров", 1, 50000);
         employees[1] = new Employee("Сергей Королев", 1, 45000);
