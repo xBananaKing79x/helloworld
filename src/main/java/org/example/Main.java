@@ -1,10 +1,9 @@
 package org.example;
 
-import org.w3c.dom.ls.LSOutput;
+import java.util.Arrays;
 
 public class Main {
     private static Employee[] employees = new Employee[10];
-
     //Базовые методы
     //Печать количества сотрудников
     public static void printAllEmployees() {
@@ -148,9 +147,9 @@ public class Main {
     }
 
     //Вывод сотрудника с ЗП меньше указанной
-    public static void printEmployeesWithSalaryLessThan(double threshold) {
+    public static void printEmployeesWithSalaryLessThan(int threshold) {
         for (Employee emp : employees) {
-            if (emp != null && emp.getSalary() < threshold) {
+            if (emp.getSalary() < threshold) {
                 System.out.printf("ID: %d, ФИО: %s, Зарплата: %.2f%n",
                         emp.getId(), emp.getFullName(), emp.getSalary());
             }
@@ -158,30 +157,36 @@ public class Main {
     }
 
     //Вывод сотрудника с ЗП больше указанной
-    public static void printEmployeesWithSalaryGreaterOrEqual(double threshold) {
+    public static void printEmployeesWithSalaryGreaterThan(int threshold) {
         for (Employee emp : employees) {
-            if (emp != null && emp.getSalary() >= threshold) {
+            if (emp.getSalary() >= threshold) {
                 System.out.printf("ID: %d, ФИО: %s, Зарплата: %.2f%n",
                         emp.getId(), emp.getFullName(), emp.getSalary());
             }
         }
     }
-
     public static void main(String[] args) {
-        employees[0] = new Employee("Иван Петров", 1, 50000);
-        employees[1] = new Employee("Сергей Королев", 1, 45000);
-        employees[2] = new Employee("Светлана Кузнецова", 2, 35000);
-        employees[3] = new Employee("Кирилл Денисов", 2, 65000);
-        employees[4] = new Employee("Егор Воронкин", 3, 33000);
-        employees[5] = new Employee("Ирина Ястребова", 3, 46000);
+        employees[0] = new Employee("Иванов Иван Иванович", 1, 50000);
+        employees[1] = new Employee("Петров Петр Петрович", 1, 60000);
+        employees[2] = new Employee("Сидоров Сидор Сидорович", 2, 45000);
+        employees[3] = new Employee("Кузнецов Андрей Викторович", 2, 70000);
+        employees[4] = new Employee("Морозова Анна Сергеевна", 3, 55000);
+        employees[5] = new Employee("Николаев Дмитрий Александрович", 3, 80000);
+        employees[6] = new Employee("Федорова Елена Владимировна", 4, 90000);
+        employees[7] = new Employee("Андреев Сергей Николаевич", 4, 65000);
+        employees[8] = new Employee("Васильева Ольга Петровна", 5, 75000);
+        employees[9] = new Employee("Григорьев Михаил Игоревич", 5, 85000);
 
         //Вывод результата для проверки
         //Вывод фонда оплаты труда
         System.out.println("Фонд оплаты труда: " + calculateTotalSalary());
         //Поиск сотрудника с минимальным окладом
         System.out.println("Сотрудник с минимальным окладом: " + findMinSalaryEmployee());
-        
-
-
+        System.out.println("Вывод сотрудника с ЗП меньше указанной: ");
+        printEmployeesWithSalaryLessThan(90000);
+        System.out.println("Сотрудник с максимальным окладом: " + findMaxSalaryEmployee());
+        System.out.println("Средняя ЗП по компании: " + calculateAverageSalary());
+        System.out.println(calculateDepartmentAverageSalary(1));
     }
+
 }

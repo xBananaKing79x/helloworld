@@ -4,7 +4,7 @@ import java.util.Objects;
 
 //Класс сотрудник
 public class Employee {
-    private static String fullName;
+    private final String fullName;
     private static int department;
     private final int id;
     private double salary;
