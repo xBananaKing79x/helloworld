@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Main {
     private static Employee[] employees = new Employee[10];
+
     //Базовые методы
     //Печать количества сотрудников
     public static void printAllEmployees() {
@@ -135,9 +136,9 @@ public class Main {
     public static void indexDepartmentSalaries(int department, double percent) {
         for (Employee emp : employees) {
             if (emp != null && emp.getDepartment() == department) {
-                System.out.println("Сотрудник: "+ emp.getFullName()+ " Старое значение ЗП: " + emp.getSalary());
+                System.out.println("Сотрудник: " + emp.getFullName() + " Старое значение ЗП: " + emp.getSalary());
                 emp.setSalary(emp.getSalary() * (1 + percent / 100));
-                System.out.println("Сотрудник: "+ emp.getFullName()+ " Новое значение ЗП: " + emp.getSalary());
+                System.out.println("Сотрудник: " + emp.getFullName() + " Новое значение ЗП: " + emp.getSalary());
             }
         }
     }
@@ -146,7 +147,7 @@ public class Main {
     public static void printDepartmentEmployees(int department) {
         for (Employee emp : employees) {
             if (emp != null && emp.getDepartment() == department) {
-                System.out.println("ID:" + emp.getId() + " Департамент: "+ emp.getDepartment() + " ФИО: " + emp.getFullName() + " Зарплата: " + emp.getSalary());
+                System.out.println("ID:" + emp.getId() + " Департамент: " + emp.getDepartment() + " ФИО: " + emp.getFullName() + " Зарплата: " + emp.getSalary());
             }
         }
     }
@@ -155,8 +156,8 @@ public class Main {
     public static void printEmployeesWithSalaryLessThan(int threshold, int department) {
         int count = 0;
         for (Employee emp : employees) {
-            if (emp.getSalary() < threshold && emp.getDepartment()==department) {
-                System.out.println("ID:" + emp.getId() + " Департамент: "+ emp.getDepartment() + " ФИО: " + emp.getFullName() + " Зарплата: " + emp.getSalary());
+            if (emp.getSalary() < threshold && emp.getDepartment() == department) {
+                System.out.println("ID:" + emp.getId() + " Департамент: " + emp.getDepartment() + " ФИО: " + emp.getFullName() + " Зарплата: " + emp.getSalary());
                 count++;
             }
         }
@@ -166,12 +167,13 @@ public class Main {
     //Вывод сотрудника с ЗП больше указанной
     public static void printEmployeesWithSalaryGreaterThan(int threshold, int department) {
         for (Employee emp : employees) {
-            if (emp.getSalary() >= threshold && emp.getDepartment()==department) {
-                System.out.println("ID:" + emp.getId() + " Департамент: "+ emp.getDepartment() + " ФИО: " + emp.getFullName() + " Зарплата: " + emp.getSalary()
-                        );
+            if (emp.getSalary() >= threshold && emp.getDepartment() == department) {
+                System.out.println("ID:" + emp.getId() + " Департамент: " + emp.getDepartment() + " ФИО: " + emp.getFullName() + " Зарплата: " + emp.getSalary()
+                );
             }
         }
     }
+
     public static void main(String[] args) {
         employees[0] = new Employee("Иванов Иван Иванович", 1, 30000);
         employees[1] = new Employee("Петров Петр Петрович", 1, 60000);
@@ -190,7 +192,7 @@ public class Main {
         //Поиск сотрудника с минимальным окладом
         System.out.println("Сотрудник с минимальным окладом: " + findMinSalaryEmployee());
         System.out.println("Печать сотрудника с ЗП меньше указанной: ");
-        printEmployeesWithSalaryLessThan(90000,3);
+        printEmployeesWithSalaryLessThan(90000, 3);
         System.out.println("Сотрудник с максимальным окладом: " + findMaxSalaryEmployee());
         System.out.println("Средняя ЗП по компании: " + calculateAverageSalary());
         System.out.println(calculateDepartmentAverageSalary(1));
