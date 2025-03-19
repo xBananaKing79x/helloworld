@@ -124,14 +124,20 @@ public class Main {
                 count++;
             }
         }
-        return count > 0 ? sum / count : 0;
+        //System.out.println("Количество человек - " + count);//Отладочный вывод
+        //System.out.println("Сумма  - " + sum);//Отладочный вывод
+        double avgSalary = count > 0 ? sum / count : 0;
+        //System.out.println("Средняя зарплата: " + avgSalary);
+        return avgSalary;
     }
 
-    //Индексация ЗП по департаменту
+    //Индексация ЗП по департаменту с выводом
     public static void indexDepartmentSalaries(int department, double percent) {
         for (Employee emp : employees) {
             if (emp != null && emp.getDepartment() == department) {
+                System.out.println("Сотрудник: "+ emp.getFullName()+ " Старое значение ЗП: " + emp.getSalary());
                 emp.setSalary(emp.getSalary() * (1 + percent / 100));
+                System.out.println("Сотрудник: "+ emp.getFullName()+ " Новое значение ЗП: " + emp.getSalary());
             }
         }
     }
@@ -183,17 +189,25 @@ public class Main {
         System.out.println("Фонд оплаты труда: " + calculateTotalSalary());
         //Поиск сотрудника с минимальным окладом
         System.out.println("Сотрудник с минимальным окладом: " + findMinSalaryEmployee());
-        System.out.println("Вывод сотрудника с ЗП меньше указанной: ");
+        System.out.println("Печать сотрудника с ЗП меньше указанной: ");
         printEmployeesWithSalaryLessThan(90000,3);
         System.out.println("Сотрудник с максимальным окладом: " + findMaxSalaryEmployee());
         System.out.println("Средняя ЗП по компании: " + calculateAverageSalary());
         System.out.println(calculateDepartmentAverageSalary(1));
-        System.out.println("Вывод сотрудника с департамента с ЗП больше указанной: ");
-        printEmployeesWithSalaryGreaterThan(60000, 5);
-        System.out.println("Вывод сотрудников департамента: ");
+        System.out.println("Печать сотрудника с департамента с ЗП больше указанной: ");
+        printEmployeesWithSalaryGreaterThan(40000, 5);
+        System.out.println("Печать сотрудников департамента: ");
         printDepartmentEmployees(5);
-        Employee firstEmployee = employees[0]; // Получаем первого сотрудника
-        System.out.println("Департамент первого сотрудника: " + firstEmployee.getDepartment());
+        System.out.println("Печать сотрудников департамента: ");
+        printDepartmentEmployees(2);
+        System.out.println("Индексация ЗП по департаменту: ");
+        indexDepartmentSalaries(5, 10);
+        System.out.println("Среднее значение ЗП по указанному департаменту " + calculateDepartmentAverageSalary(3));
+        System.out.println("Расчет фонда ЗП по указанному департаменту " + calculateDepartmentSalarySum(3));
+        System.out.println("Максимальный оклад по указанному департаменту: " + findDepartmentMaxSalary(3));
+        System.out.println("Минимальный оклад по указанному департаменту: " + findDepartmentMinSalary(3));
+
+
     }
 
 }
