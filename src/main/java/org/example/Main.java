@@ -207,5 +207,4 @@ public class Main {
         System.out.println("Максимальный оклад по указанному департаменту: " + findDepartmentMaxSalary(3));
         System.out.println("Минимальный оклад по указанному департаменту: " + findDepartmentMinSalary(3));
     }
-
 }
