@@ -140,42 +140,43 @@ public class Main {
     public static void printDepartmentEmployees(int department) {
         for (Employee emp : employees) {
             if (emp != null && emp.getDepartment() == department) {
-                System.out.printf("ID: %d, ФИО: %s, Зарплата: %.2f%n",
-                        emp.getId(), emp.getFullName(), emp.getSalary());
+                System.out.println("ID:" + emp.getId() + " Департамент: "+ emp.getDepartment() + " ФИО: " + emp.getFullName() + " Зарплата: " + emp.getSalary());
             }
         }
     }
 
     //Вывод сотрудника с ЗП меньше указанной
-    public static void printEmployeesWithSalaryLessThan(int threshold) {
+    public static void printEmployeesWithSalaryLessThan(int threshold, int department) {
+        int count = 0;
         for (Employee emp : employees) {
-            if (emp.getSalary() < threshold) {
-                System.out.printf("ID: %d, ФИО: %s, Зарплата: %.2f%n",
-                        emp.getId(), emp.getFullName(), emp.getSalary());
+            if (emp.getSalary() < threshold && emp.getDepartment()==department) {
+                System.out.println("ID:" + emp.getId() + " Департамент: "+ emp.getDepartment() + " ФИО: " + emp.getFullName() + " Зарплата: " + emp.getSalary());
+                count++;
             }
         }
+        System.out.println("Найдено сотрудников - " + count);
     }
 
     //Вывод сотрудника с ЗП больше указанной
-    public static void printEmployeesWithSalaryGreaterThan(int threshold) {
+    public static void printEmployeesWithSalaryGreaterThan(int threshold, int department) {
         for (Employee emp : employees) {
-            if (emp.getSalary() >= threshold) {
-                System.out.printf("ID: %d, ФИО: %s, Зарплата: %.2f%n",
-                        emp.getId(), emp.getFullName(), emp.getSalary());
+            if (emp.getSalary() >= threshold && emp.getDepartment()==department) {
+                System.out.println("ID:" + emp.getId() + " Департамент: "+ emp.getDepartment() + " ФИО: " + emp.getFullName() + " Зарплата: " + emp.getSalary()
+                        );
             }
         }
     }
     public static void main(String[] args) {
-        employees[0] = new Employee("Иванов Иван Иванович", 1, 50000);
+        employees[0] = new Employee("Иванов Иван Иванович", 1, 30000);
         employees[1] = new Employee("Петров Петр Петрович", 1, 60000);
         employees[2] = new Employee("Сидоров Сидор Сидорович", 2, 45000);
         employees[3] = new Employee("Кузнецов Андрей Викторович", 2, 70000);
         employees[4] = new Employee("Морозова Анна Сергеевна", 3, 55000);
         employees[5] = new Employee("Николаев Дмитрий Александрович", 3, 80000);
-        employees[6] = new Employee("Федорова Елена Владимировна", 4, 90000);
+        employees[6] = new Employee("Федорова Елена Владимировна", 4, 40000);
         employees[7] = new Employee("Андреев Сергей Николаевич", 4, 65000);
-        employees[8] = new Employee("Васильева Ольга Петровна", 5, 75000);
-        employees[9] = new Employee("Григорьев Михаил Игоревич", 5, 85000);
+        employees[8] = new Employee("Васильева Ольга Петровна", 5, 35000);
+        employees[9] = new Employee("Григорьев Михаил Игоревич", 5, 55000);
 
         //Вывод результата для проверки
         //Вывод фонда оплаты труда
@@ -183,10 +184,16 @@ public class Main {
         //Поиск сотрудника с минимальным окладом
         System.out.println("Сотрудник с минимальным окладом: " + findMinSalaryEmployee());
         System.out.println("Вывод сотрудника с ЗП меньше указанной: ");
-        printEmployeesWithSalaryLessThan(90000);
+        printEmployeesWithSalaryLessThan(90000,3);
         System.out.println("Сотрудник с максимальным окладом: " + findMaxSalaryEmployee());
         System.out.println("Средняя ЗП по компании: " + calculateAverageSalary());
         System.out.println(calculateDepartmentAverageSalary(1));
+        System.out.println("Вывод сотрудника с департамента с ЗП больше указанной: ");
+        printEmployeesWithSalaryGreaterThan(60000, 5);
+        System.out.println("Вывод сотрудников департамента: ");
+        printDepartmentEmployees(5);
+        Employee firstEmployee = employees[0]; // Получаем первого сотрудника
+        System.out.println("Департамент первого сотрудника: " + firstEmployee.getDepartment());
     }
 
 }

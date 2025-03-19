@@ -5,7 +5,7 @@ import java.util.Objects;
 //Класс сотрудник
 public class Employee {
     private final String fullName;
-    private static int department;
+    private final int department;
     private final int id;
     private double salary;
     private static int nextId = 1;
@@ -14,7 +14,8 @@ public class Employee {
     public Employee(String fullName, int department, double salary) {
         this.id = nextId++;
         this.fullName = fullName;
-        setDepartment(department);
+        this.department = department;
+        //setDepartment(department);
         this.salary = salary;
     }
     //Геттеры
@@ -31,12 +32,12 @@ public class Employee {
         return salary;
     }
     //Сеттеры с валидацией
-    public void setDepartment(int department) {
-        if (department < 1 || department > 5) {
-            throw new IllegalArgumentException("Отдел должен быть от1 до 5");
-        }
-     this.department =department;
-    }
+//    public void setDepartment(int department) {
+//        if (department < 1 || department > 5) {
+//            throw new IllegalArgumentException("Отдел должен быть от 1 до 5");
+//        }
+//     this.department = department;
+//    }
     public void setSalary(double salary){
         this.salary = salary;
     }
